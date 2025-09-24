@@ -247,9 +247,11 @@ const Home: React.FC = () => {
           </div>
         </div>
       </section>
+    </div>
+  );
+};
 
-      <style jsx>{`
-        .hero {
+export default Home;
           background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)),
             url("${templeImages.general[0]}");
           background-size: cover;
