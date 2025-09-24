@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X, ChevronDown } from "lucide-react";
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -8,30 +8,28 @@ const Header: React.FC = () => {
   const location = useLocation();
 
   const navigation = [
-    { name: 'Home', href: '/' },
+    { name: "Home", href: "/" },
     {
-      name: 'About',
-      href: '/about',
+      name: "About",
+      href: "/about",
       children: [
-        { name: 'History', href: '/about/history' },
-        { name: 'Architecture', href: '/about/architecture' },
-        { name: 'Trust', href: '/about/trust' },
+        { name: "History", href: "/about/history" },
+        { name: "Architecture", href: "/about/architecture" },
+        { name: "Trust", href: "/about/trust" },
       ],
     },
-    { name: 'Deities', href: '/deities' },
+    { name: "Deities", href: "/deities" },
     {
-      name: 'Festivals',
-      href: '/festivals',
-      children: [
-        { name: 'Calendar', href: '/festivals/calendar' },
-      ],
+      name: "Festivals",
+      href: "/festivals",
+      children: [{ name: "Calendar", href: "/festivals/calendar" }],
     },
-    { name: 'Pooja & Seva', href: '/pooja' },
-    { name: 'Visitor Info', href: '/visitor-info' },
-    { name: 'Gallery', href: '/gallery' },
-    { name: 'Donate', href: '/donate' },
-    { name: 'News', href: '/news' },
-    { name: 'Contact', href: '/contact' },
+    { name: "Pooja & Seva", href: "/pooja" },
+    { name: "Visitor Info", href: "/visitor-info" },
+    { name: "Gallery", href: "/gallery" },
+    { name: "Donate", href: "/donate" },
+    { name: "News", href: "/news" },
+    { name: "Contact", href: "/contact" },
   ];
 
   const toggleMenu = () => {
@@ -52,7 +50,11 @@ const Header: React.FC = () => {
       <div className="container">
         <nav className="nav">
           <Link to="/" className="logo">
-            <img src="/images/temple-logo.png" alt="Mrugavadhe Temple" className="logo-img" />
+            <img
+              src="/images/temple-logo.png"
+              alt="Mrugavadhe Temple"
+              className="logo-img"
+            />
             <div className="logo-text">
               <h1>श्री मल्लिकार्जुन स्वामी</h1>
               <p>Mrugavadhe Temple</p>
@@ -67,7 +69,9 @@ const Header: React.FC = () => {
                   <div className="dropdown">
                     <button
                       className={`nav-link dropdown-trigger ${
-                        item.children.some(child => isActive(child.href)) ? 'active' : ''
+                        item.children.some((child) => isActive(child.href))
+                          ? "active"
+                          : ""
                       }`}
                       onClick={() => toggleDropdown(item.name)}
                     >
@@ -83,7 +87,9 @@ const Header: React.FC = () => {
                           <Link
                             key={child.name}
                             to={child.href}
-                            className={`dropdown-item ${isActive(child.href) ? 'active' : ''}`}
+                            className={`dropdown-item ${
+                              isActive(child.href) ? "active" : ""
+                            }`}
                           >
                             {child.name}
                           </Link>
@@ -94,7 +100,9 @@ const Header: React.FC = () => {
                 ) : (
                   <Link
                     to={item.href}
-                    className={`nav-link ${isActive(item.href) ? 'active' : ''}`}
+                    className={`nav-link ${
+                      isActive(item.href) ? "active" : ""
+                    }`}
                   >
                     {item.name}
                   </Link>
@@ -116,7 +124,9 @@ const Header: React.FC = () => {
               <div key={item.name} className="mobile-nav-item">
                 <Link
                   to={item.href}
-                  className={`mobile-nav-link ${isActive(item.href) ? 'active' : ''}`}
+                  className={`mobile-nav-link ${
+                    isActive(item.href) ? "active" : ""
+                  }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
@@ -127,7 +137,9 @@ const Header: React.FC = () => {
                       <Link
                         key={child.name}
                         to={child.href}
-                        className={`mobile-dropdown-link ${isActive(child.href) ? 'active' : ''}`}
+                        className={`mobile-dropdown-link ${
+                          isActive(child.href) ? "active" : ""
+                        }`}
                         onClick={() => setIsMenuOpen(false)}
                       >
                         {child.name}
@@ -144,7 +156,7 @@ const Header: React.FC = () => {
       <style jsx>{`
         .header {
           background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
-          box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
           position: sticky;
           top: 0;
           z-index: 100;
@@ -235,7 +247,7 @@ const Header: React.FC = () => {
           left: 0;
           background: white;
           border-radius: 8px;
-          box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
           min-width: 200px;
           padding: 0.5rem 0;
           z-index: 1000;
@@ -268,7 +280,7 @@ const Header: React.FC = () => {
 
         .mobile-nav {
           padding: 1rem 0;
-          border-top: 1px solid rgba(255,255,255,0.2);
+          border-top: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .mobile-nav-item {
@@ -281,7 +293,7 @@ const Header: React.FC = () => {
           color: white;
           text-decoration: none;
           font-weight: 500;
-          border-bottom: 1px solid rgba(255,255,255,0.1);
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .mobile-nav-link:hover,
@@ -297,7 +309,7 @@ const Header: React.FC = () => {
         .mobile-dropdown-link {
           display: block;
           padding: 0.5rem 0;
-          color: rgba(255,255,255,0.8);
+          color: rgba(255, 255, 255, 0.8);
           text-decoration: none;
           font-size: 0.9rem;
         }
@@ -311,7 +323,7 @@ const Header: React.FC = () => {
           .desktop-nav {
             display: flex;
           }
-          
+
           .mobile-menu-btn {
             display: none;
           }

@@ -1,24 +1,24 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Home from './pages/Home';
-import About from './pages/About';
-import History from './pages/History';
-import Architecture from './pages/Architecture';
-import Trust from './pages/Trust';
-import Deities from './pages/Deities';
-import DeityDetail from './pages/DeityDetail';
-import Festivals from './pages/Festivals';
-import Calendar from './pages/Calendar';
-import Pooja from './pages/Pooja';
-import VisitorInfo from './pages/VisitorInfo';
-import Gallery from './pages/Gallery';
-import Donate from './pages/Donate';
-import News from './pages/News';
-import NewsDetail from './pages/NewsDetail';
-import Contact from './pages/Contact';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import History from "./pages/History";
+import Architecture from "./pages/Architecture";
+import Trust from "./pages/Trust";
+import Deities from "./pages/Deities";
+import DeityDetail from "./pages/DeityDetail";
+import Festivals from "./pages/Festivals";
+import Calendar from "./pages/Calendar";
+import Pooja from "./pages/Pooja";
+import VisitorInfo from "./pages/VisitorInfo";
+import Gallery from "./pages/Gallery";
+import Donate from "./pages/Donate";
+import News from "./pages/News";
+import NewsDetail from "./pages/NewsDetail";
+import Contact from "./pages/Contact";
+import "./App.css";
 
 function App() {
   return (
