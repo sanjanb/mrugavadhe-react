@@ -12,13 +12,13 @@
 }
 
 .hero::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3));
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
 }
 
 .hero-content {
@@ -29,7 +29,7 @@
 .hero-content h1 {
   font-size: 3.5rem;
   margin-bottom: 0.5rem;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .hero-subtitle {
@@ -71,7 +71,7 @@
   background: white;
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   text-align: center;
   transition: transform 0.3s ease;
 }
@@ -127,7 +127,7 @@
   display: grid;
   grid-template-columns: 400px 1fr;
   gap: 3rem;
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   overflow: hidden;
   backdrop-filter: blur(10px);
@@ -167,7 +167,7 @@
 }
 
 .festival-events li::before {
-  content: '•';
+  content: "•";
   color: #ffeb3b;
   font-weight: bold;
   margin-right: 0.5rem;
@@ -183,7 +183,7 @@
   background: white;
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   text-align: center;
   text-decoration: none;
   color: inherit;
@@ -219,7 +219,7 @@
   background: white;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
 
