@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import styles from "./Header.module.css";
@@ -6,7 +6,46 @@ import styles from "./Header.module.css";
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      setIsScrolled(scrollTop > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    // Close dropdown when clicking outside
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        openDropdown &&
+        !(event.target as Element).closest(`.${styles.dropdown}`)
+      ) {
+        setOpenDropdown(null);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [openDropdown]);
+
+  // Handle keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpenDropdown(null);
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, []);
 
   const navigation = [
     { name: "Home", href: "/" },
@@ -47,13 +86,21 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${isScrolled ? styles.scrolled : ""}`}>
       <div className="container">
-        <nav className={styles.nav}>
-          <Link to="/" className={styles.logo}>
+        <nav
+          className={styles.nav}
+          role="navigation"
+          aria-label="Main navigation"
+        >
+          <Link
+            to="/"
+            className={styles.logo}
+            aria-label="Mrugavadhe Temple Home"
+          >
             <img
               src="/images/temple-logo.png"
-              alt="Mrugavadhe Temple"
+              alt="Mrugavadhe Temple Logo"
               className={styles.logoImg}
             />
             <div className={styles.logoText}>
@@ -75,13 +122,37 @@ const Header: React.FC = () => {
                           : ""
                       }`}
                       onClick={() => toggleDropdown(item.name)}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter" || e.key === " ") {
+                          e.preventDefault();
+                          toggleDropdown(item.name);
+                        }
+                      }}
+                      aria-expanded={openDropdown === item.name}
+                      aria-haspopup="true"
+                      aria-label={`${item.name} menu`}
                     >
                       {item.name}
-                      <ChevronDown size={16} />
+                      <ChevronDown
+                        size={16}
+                        style={{
+                          transform:
+                            openDropdown === item.name
+                              ? "rotate(180deg)"
+                              : "rotate(0deg)",
+                          transition:
+                            "transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+                        }}
+                      />
                     </button>
                     {openDropdown === item.name && (
-                      <div className={styles.dropdownMenu}>
-                        <Link to={item.href} className={styles.dropdownItem}>
+                      <div className={styles.dropdownMenu} role="menu">
+                        <Link
+                          to={item.href}
+                          className={styles.dropdownItem}
+                          role="menuitem"
+                          onClick={() => setOpenDropdown(null)}
+                        >
                           Overview
                         </Link>
                         {item.children.map((child) => (
@@ -91,6 +162,8 @@ const Header: React.FC = () => {
                             className={`${styles.dropdownItem} ${
                               isActive(child.href) ? styles.active : ""
                             }`}
+                            role="menuitem"
+                            onClick={() => setOpenDropdown(null)}
                           >
                             {child.name}
                           </Link>
@@ -113,14 +186,22 @@ const Header: React.FC = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button className={styles.mobileMenuBtn} onClick={toggleMenu}>
+          <button
+            className={styles.mobileMenuBtn}
+            onClick={toggleMenu}
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-menu"
+            aria-label={
+              isMenuOpen ? "Close navigation menu" : "Open navigation menu"
+            }
+          >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </nav>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className={styles.mobileNav}>
+          <div className={styles.mobileNav} id="mobile-menu" role="menu">
             {navigation.map((item) => (
               <div key={item.name} className={styles.mobileNavItem}>
                 <Link
@@ -129,6 +210,7 @@ const Header: React.FC = () => {
                     isActive(item.href) ? styles.active : ""
                   }`}
                   onClick={() => setIsMenuOpen(false)}
+                  role="menuitem"
                 >
                   {item.name}
                 </Link>
@@ -142,6 +224,7 @@ const Header: React.FC = () => {
                           isActive(child.href) ? styles.active : ""
                         }`}
                         onClick={() => setIsMenuOpen(false)}
+                        role="menuitem"
                       >
                         {child.name}
                       </Link>
