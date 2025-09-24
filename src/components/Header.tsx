@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown } from 'lucide-react';
-import styles from './Header.module.css';
+import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X, ChevronDown } from "lucide-react";
+import styles from "./Header.module.css";
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,30 +9,28 @@ const Header: React.FC = () => {
   const location = useLocation();
 
   const navigation = [
-    { name: 'Home', href: '/' },
+    { name: "Home", href: "/" },
     {
-      name: 'About',
-      href: '/about',
+      name: "About",
+      href: "/about",
       children: [
-        { name: 'History', href: '/about/history' },
-        { name: 'Architecture', href: '/about/architecture' },
-        { name: 'Trust', href: '/about/trust' },
+        { name: "History", href: "/about/history" },
+        { name: "Architecture", href: "/about/architecture" },
+        { name: "Trust", href: "/about/trust" },
       ],
     },
-    { name: 'Deities', href: '/deities' },
+    { name: "Deities", href: "/deities" },
     {
-      name: 'Festivals',
-      href: '/festivals',
-      children: [
-        { name: 'Calendar', href: '/festivals/calendar' },
-      ],
+      name: "Festivals",
+      href: "/festivals",
+      children: [{ name: "Calendar", href: "/festivals/calendar" }],
     },
-    { name: 'Pooja & Seva', href: '/pooja' },
-    { name: 'Visitor Info', href: '/visitor-info' },
-    { name: 'Gallery', href: '/gallery' },
-    { name: 'Donate', href: '/donate' },
-    { name: 'News', href: '/news' },
-    { name: 'Contact', href: '/contact' },
+    { name: "Pooja & Seva", href: "/pooja" },
+    { name: "Visitor Info", href: "/visitor-info" },
+    { name: "Gallery", href: "/gallery" },
+    { name: "Donate", href: "/donate" },
+    { name: "News", href: "/news" },
+    { name: "Contact", href: "/contact" },
   ];
 
   const toggleMenu = () => {
@@ -53,7 +51,11 @@ const Header: React.FC = () => {
       <div className="container">
         <nav className={styles.nav}>
           <Link to="/" className={styles.logo}>
-            <img src="/images/temple-logo.png" alt="Mrugavadhe Temple" className={styles.logoImg} />
+            <img
+              src="/images/temple-logo.png"
+              alt="Mrugavadhe Temple"
+              className={styles.logoImg}
+            />
             <div className={styles.logoText}>
               <h1>श्री मल्लिकार्जुन स्वामी</h1>
               <p>Mrugavadhe Temple</p>
@@ -68,7 +70,9 @@ const Header: React.FC = () => {
                   <div className={styles.dropdown}>
                     <button
                       className={`${styles.navLink} ${styles.dropdownTrigger} ${
-                        item.children.some(child => isActive(child.href)) ? styles.active : ''
+                        item.children.some((child) => isActive(child.href))
+                          ? styles.active
+                          : ""
                       }`}
                       onClick={() => toggleDropdown(item.name)}
                     >
@@ -84,7 +88,9 @@ const Header: React.FC = () => {
                           <Link
                             key={child.name}
                             to={child.href}
-                            className={`${styles.dropdownItem} ${isActive(child.href) ? styles.active : ''}`}
+                            className={`${styles.dropdownItem} ${
+                              isActive(child.href) ? styles.active : ""
+                            }`}
                           >
                             {child.name}
                           </Link>
@@ -95,7 +101,9 @@ const Header: React.FC = () => {
                 ) : (
                   <Link
                     to={item.href}
-                    className={`${styles.navLink} ${isActive(item.href) ? styles.active : ''}`}
+                    className={`${styles.navLink} ${
+                      isActive(item.href) ? styles.active : ""
+                    }`}
                   >
                     {item.name}
                   </Link>
@@ -117,7 +125,9 @@ const Header: React.FC = () => {
               <div key={item.name} className={styles.mobileNavItem}>
                 <Link
                   to={item.href}
-                  className={`${styles.mobileNavLink} ${isActive(item.href) ? styles.active : ''}`}
+                  className={`${styles.mobileNavLink} ${
+                    isActive(item.href) ? styles.active : ""
+                  }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
@@ -128,7 +138,9 @@ const Header: React.FC = () => {
                       <Link
                         key={child.name}
                         to={child.href}
-                        className={`${styles.mobileDropdownLink} ${isActive(child.href) ? styles.active : ''}`}
+                        className={`${styles.mobileDropdownLink} ${
+                          isActive(child.href) ? styles.active : ""
+                        }`}
                         onClick={() => setIsMenuOpen(false)}
                       >
                         {child.name}
