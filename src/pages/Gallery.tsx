@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { templeImages } from "../data/templeData";
 
 const Gallery: React.FC = () => {
