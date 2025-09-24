@@ -47,7 +47,10 @@ const Festivals: React.FC = () => {
 
                 <div className="festival-activities">
                   <h4>Festival Details:</h4>
-                  <p>This sacred festival brings devotees together in divine celebration.</p>
+                  <p>
+                    This sacred festival brings devotees together in divine
+                    celebration.
+                  </p>
                 </div>
               </div>
             ))}
