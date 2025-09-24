@@ -1,7 +1,20 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Calendar, MapPin, Clock, Heart, Camera, Book, Users } from 'lucide-react';
-import { templeInfo, festivals, newsItems, templeImages } from '../data/templeData';
+import React from "react";
+import { Link } from "react-router-dom";
+import {
+  Calendar,
+  MapPin,
+  Clock,
+  Heart,
+  Camera,
+  Book,
+  Users,
+} from "lucide-react";
+import {
+  templeInfo,
+  festivals,
+  newsItems,
+  templeImages,
+} from "../data/templeData";
 
 const Home: React.FC = () => {
   const upcomingFestival = festivals[0];
@@ -15,8 +28,9 @@ const Home: React.FC = () => {
           <h1>{templeInfo.name}</h1>
           <p className="hero-subtitle">{templeInfo.englishName}</p>
           <p className="hero-description">
-            A sacred place where Lord Rama installed the Shivalinga after slaying demon Maricha. 
-            Experience divine blessings at this ancient temple on the banks of river Tunga.
+            A sacred place where Lord Rama installed the Shivalinga after
+            slaying demon Maricha. Experience divine blessings at this ancient
+            temple on the banks of river Tunga.
           </p>
           <div className="hero-actions">
             <Link to="/pooja" className="btn btn-primary">
@@ -44,8 +58,12 @@ const Home: React.FC = () => {
             <div className="info-card">
               <MapPin className="info-icon" />
               <h3>Location</h3>
-              <p>{templeInfo.location}, {templeInfo.district}</p>
-              <p>{templeInfo.state} - {templeInfo.pincode}</p>
+              <p>
+                {templeInfo.location}, {templeInfo.district}
+              </p>
+              <p>
+                {templeInfo.state} - {templeInfo.pincode}
+              </p>
             </div>
             <div className="info-card">
               <Heart className="info-icon" />
@@ -58,29 +76,29 @@ const Home: React.FC = () => {
       </section>
 
       {/* About Preview */}
-      <section className="section" style={{ background: 'white' }}>
+      <section className="section" style={{ background: "white" }}>
         <div className="container">
           <div className="about-preview">
             <div className="about-content">
               <h2>Sacred History</h2>
               <p>
-                {templeInfo.historicalSignificance} The temple, originally named 
-                {templeInfo.originalName}, stands as a testament to divine intervention 
-                and spiritual significance.
+                {templeInfo.historicalSignificance} The temple, originally named
+                {templeInfo.originalName}, stands as a testament to divine
+                intervention and spiritual significance.
               </p>
               <p>
-                Located on the serene banks of the Tunga river, this ancient temple 
-                continues to attract devotees from across the region, offering them 
-                peace, prosperity, and spiritual fulfillment.
+                Located on the serene banks of the Tunga river, this ancient
+                temple continues to attract devotees from across the region,
+                offering them peace, prosperity, and spiritual fulfillment.
               </p>
               <Link to="/about/history" className="btn btn-primary">
                 Read Complete History
               </Link>
             </div>
             <div className="about-image">
-              <img 
-                src={templeImages.general[0]} 
-                alt="Temple View" 
+              <img
+                src={templeImages.general[0]}
+                alt="Temple View"
                 className="featured-image"
               />
             </div>
@@ -106,9 +124,11 @@ const Home: React.FC = () => {
               <div className="festival-events">
                 <h4>Special Events:</h4>
                 <ul>
-                  {upcomingFestival.specialEvents.slice(0, 3).map((event, index) => (
-                    <li key={index}>{event}</li>
-                  ))}
+                  {upcomingFestival.specialEvents
+                    .slice(0, 3)
+                    .map((event, index) => (
+                      <li key={index}>{event}</li>
+                    ))}
                 </ul>
               </div>
               <Link to="/festivals" className="btn btn-primary">
@@ -120,7 +140,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Services Preview */}
-      <section className="section" style={{ background: 'white' }}>
+      <section className="section" style={{ background: "white" }}>
         <div className="container">
           <h2 className="section-title">Temple Services</h2>
           <div className="services-grid">
@@ -129,28 +149,40 @@ const Home: React.FC = () => {
                 <Calendar size={32} />
               </div>
               <h3>Pooja & Seva</h3>
-              <p>Book various poojas and sevas online. Experience divine blessings through sacred rituals.</p>
+              <p>
+                Book various poojas and sevas online. Experience divine
+                blessings through sacred rituals.
+              </p>
             </Link>
             <Link to="/gallery" className="service-card">
               <div className="service-icon">
                 <Camera size={32} />
               </div>
               <h3>Photo Gallery</h3>
-              <p>Explore beautiful images of the temple, festivals, and spiritual celebrations.</p>
+              <p>
+                Explore beautiful images of the temple, festivals, and spiritual
+                celebrations.
+              </p>
             </Link>
             <Link to="/visitor-info" className="service-card">
               <div className="service-icon">
                 <MapPin size={32} />
               </div>
               <h3>Visitor Information</h3>
-              <p>Complete guide for visiting the temple, including timings, rules, and accommodation.</p>
+              <p>
+                Complete guide for visiting the temple, including timings,
+                rules, and accommodation.
+              </p>
             </Link>
             <Link to="/donate" className="service-card">
               <div className="service-icon">
                 <Heart size={32} />
               </div>
               <h3>Donations</h3>
-              <p>Contribute to temple activities and help maintain this sacred place of worship.</p>
+              <p>
+                Contribute to temple activities and help maintain this sacred
+                place of worship.
+              </p>
             </Link>
           </div>
         </div>
@@ -171,7 +203,9 @@ const Home: React.FC = () => {
                 <div className="news-content">
                   <div className="news-meta">
                     <span className="news-category">{item.category}</span>
-                    <span className="news-date">{new Date(item.date).toLocaleDateString()}</span>
+                    <span className="news-date">
+                      {new Date(item.date).toLocaleDateString()}
+                    </span>
                   </div>
                   <h3>{item.title}</h3>
                   <p>{item.excerpt}</p>
@@ -196,9 +230,9 @@ const Home: React.FC = () => {
           <div className="cta-content">
             <h2>Experience Divine Blessings</h2>
             <p>
-              Visit the sacred Mallikarjuna Temple and immerse yourself in the spiritual 
-              atmosphere where Lord Rama once stood. Join thousands of devotees in experiencing 
-              peace, prosperity, and divine grace.
+              Visit the sacred Mallikarjuna Temple and immerse yourself in the
+              spiritual atmosphere where Lord Rama once stood. Join thousands of
+              devotees in experiencing peace, prosperity, and divine grace.
             </p>
             <div className="cta-actions">
               <Link to="/contact" className="btn btn-primary">
@@ -216,7 +250,8 @@ const Home: React.FC = () => {
 
       <style jsx>{`
         .hero {
-          background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url('${templeImages.general[0]}');
+          background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)),
+            url("${templeImages.general[0]}");
           background-size: cover;
           background-position: center;
           height: 80vh;
@@ -230,7 +265,7 @@ const Home: React.FC = () => {
         .hero-content h1 {
           font-size: 3.5rem;
           margin-bottom: 0.5rem;
-          text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
 
         .hero-subtitle {
@@ -272,7 +307,7 @@ const Home: React.FC = () => {
           background: white;
           padding: 2rem;
           border-radius: 12px;
-          box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
           text-align: center;
           transition: transform 0.3s ease;
         }
@@ -328,7 +363,7 @@ const Home: React.FC = () => {
           display: grid;
           grid-template-columns: 400px 1fr;
           gap: 3rem;
-          background: rgba(255,255,255,0.1);
+          background: rgba(255, 255, 255, 0.1);
           border-radius: 12px;
           overflow: hidden;
           backdrop-filter: blur(10px);
@@ -368,7 +403,7 @@ const Home: React.FC = () => {
         }
 
         .festival-events li::before {
-          content: '•';
+          content: "•";
           color: #ffeb3b;
           font-weight: bold;
           margin-right: 0.5rem;
@@ -384,7 +419,7 @@ const Home: React.FC = () => {
           background: white;
           padding: 2rem;
           border-radius: 12px;
-          box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
           text-align: center;
           text-decoration: none;
           color: inherit;
@@ -420,7 +455,7 @@ const Home: React.FC = () => {
           background: white;
           border-radius: 12px;
           overflow: hidden;
-          box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
           transition: transform 0.3s ease;
         }
 
