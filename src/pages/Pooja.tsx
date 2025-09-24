@@ -21,7 +21,7 @@ const Pooja: React.FC = () => {
                   <h3>{pooja.name}</h3>
                   <div className="pooja-price">
                     <IndianRupee size={18} />
-                    <span>{pooja.price}</span>
+                    <span>₹{pooja.cost}</span>
                   </div>
                 </div>
 
@@ -43,12 +43,8 @@ const Pooja: React.FC = () => {
                 </div>
 
                 <div className="pooja-includes">
-                  <h4>Includes:</h4>
-                  <ul>
-                    {pooja.includes.map((item, index) => (
-                      <li key={index}>{item}</li>
-                    ))}
-                  </ul>
+                  <h4>Timing:</h4>
+                  <p>{pooja.timing}</p>
                 </div>
 
                 <button className="btn btn-primary full-width">

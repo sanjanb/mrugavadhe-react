@@ -1,5 +1,5 @@
-import React from 'react';
-import { Heart, Gift, Users, Building } from 'lucide-react';
+import React from "react";
+import { Heart, Gift, Users, Building } from "lucide-react";
 
 const Donate: React.FC = () => {
   return (
@@ -19,7 +19,10 @@ const Donate: React.FC = () => {
                 <Heart size={48} />
               </div>
               <h3>General Donations</h3>
-              <p>Support daily temple operations, maintenance, and religious activities.</p>
+              <p>
+                Support daily temple operations, maintenance, and religious
+                activities.
+              </p>
               <div className="donation-amounts">
                 <button className="amount-btn">₹100</button>
                 <button className="amount-btn">₹500</button>
@@ -34,7 +37,9 @@ const Donate: React.FC = () => {
                 <Gift size={48} />
               </div>
               <h3>Special Poojas</h3>
-              <p>Sponsor specific rituals and ceremonies for spiritual benefits.</p>
+              <p>
+                Sponsor specific rituals and ceremonies for spiritual benefits.
+              </p>
               <div className="pooja-options">
                 <div className="pooja-item">
                   <span>Abhishek Pooja</span>
@@ -49,7 +54,9 @@ const Donate: React.FC = () => {
                   <span>₹2501</span>
                 </div>
               </div>
-              <button className="btn btn-primary full-width">Sponsor Pooja</button>
+              <button className="btn btn-primary full-width">
+                Sponsor Pooja
+              </button>
             </div>
 
             <div className="card donation-card">
@@ -57,7 +64,10 @@ const Donate: React.FC = () => {
                 <Building size={48} />
               </div>
               <h3>Infrastructure Development</h3>
-              <p>Contribute to temple renovations, facilities, and infrastructure improvements.</p>
+              <p>
+                Contribute to temple renovations, facilities, and infrastructure
+                improvements.
+              </p>
               <div className="infrastructure-needs">
                 <ul>
                   <li>Temple renovation and maintenance</li>
@@ -74,7 +84,10 @@ const Donate: React.FC = () => {
                 <Users size={48} />
               </div>
               <h3>Community Services</h3>
-              <p>Support education, healthcare, and welfare programs for the local community.</p>
+              <p>
+                Support education, healthcare, and welfare programs for the
+                local community.
+              </p>
               <div className="community-programs">
                 <ul>
                   <li>Free food distribution (Annadana)</li>
@@ -83,7 +96,9 @@ const Donate: React.FC = () => {
                   <li>Cultural and spiritual programs</li>
                 </ul>
               </div>
-              <button className="btn btn-primary full-width">Support Community</button>
+              <button className="btn btn-primary full-width">
+                Support Community
+              </button>
             </div>
           </div>
 
@@ -94,20 +109,24 @@ const Donate: React.FC = () => {
                 <div>
                   <h3>80G Tax Exemption</h3>
                   <p>
-                    All donations to our temple are eligible for tax deduction under 
-                    Section 80G of the Income Tax Act. You will receive a tax-exempt 
-                    receipt for your contribution.
+                    All donations to our temple are eligible for tax deduction
+                    under Section 80G of the Income Tax Act. You will receive a
+                    tax-exempt receipt for your contribution.
                   </p>
-                  <p><strong>Registration Number:</strong> AAAAT1234F20231</p>
+                  <p>
+                    <strong>Registration Number:</strong> AAAAT1234F20231
+                  </p>
                 </div>
                 <div>
                   <h3>Transparent Usage</h3>
                   <p>
-                    We maintain complete transparency in the usage of donations. 
-                    Annual reports and fund utilization statements are published 
+                    We maintain complete transparency in the usage of donations.
+                    Annual reports and fund utilization statements are published
                     regularly for donor confidence.
                   </p>
-                  <button className="btn btn-secondary">View Annual Report</button>
+                  <button className="btn btn-secondary">
+                    View Annual Report
+                  </button>
                 </div>
               </div>
             </div>
@@ -119,17 +138,29 @@ const Donate: React.FC = () => {
               <div className="grid grid-3">
                 <div className="method-card">
                   <h4>Online Payment</h4>
-                  <p>Secure online donations via credit card, debit card, or net banking.</p>
+                  <p>
+                    Secure online donations via credit card, debit card, or net
+                    banking.
+                  </p>
                 </div>
                 <div className="method-card">
                   <h4>Bank Transfer</h4>
-                  <p><strong>Account:</strong> Mallikarjuna Temple Trust</p>
-                  <p><strong>A/C No:</strong> 1234567890</p>
-                  <p><strong>IFSC:</strong> SBIN0001234</p>
+                  <p>
+                    <strong>Account:</strong> Mallikarjuna Temple Trust
+                  </p>
+                  <p>
+                    <strong>A/C No:</strong> 1234567890
+                  </p>
+                  <p>
+                    <strong>IFSC:</strong> SBIN0001234
+                  </p>
                 </div>
                 <div className="method-card">
                   <h4>Cash/Cheque</h4>
-                  <p>Visit temple office or send DD in favor of "Mallikarjuna Temple Trust"</p>
+                  <p>
+                    Visit temple office or send DD in favor of "Mallikarjuna
+                    Temple Trust"
+                  </p>
                 </div>
               </div>
             </div>

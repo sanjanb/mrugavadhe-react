@@ -46,12 +46,8 @@ const Festivals: React.FC = () => {
                 </div>
 
                 <div className="festival-activities">
-                  <h4>Special Activities:</h4>
-                  <ul>
-                    {festival.specialActivities.map((activity, index) => (
-                      <li key={index}>{activity}</li>
-                    ))}
-                  </ul>
+                  <h4>Festival Details:</h4>
+                  <p>This sacred festival brings devotees together in divine celebration.</p>
                 </div>
               </div>
             ))}

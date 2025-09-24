@@ -1,6 +1,6 @@
-import React from 'react';
-import { Calendar, Clock, User } from 'lucide-react';
-import { newsItems } from '../data/templeData';
+import React from "react";
+import { Calendar, Clock, User } from "lucide-react";
+import { newsItems } from "../data/templeData";
 
 const News: React.FC = () => {
   return (
@@ -8,7 +8,9 @@ const News: React.FC = () => {
       <div className="page-header">
         <div className="container">
           <h1>Temple News & Updates</h1>
-          <p>Stay updated with the latest temple activities and announcements</p>
+          <p>
+            Stay updated with the latest temple activities and announcements
+          </p>
         </div>
       </div>
 
@@ -26,17 +28,19 @@ const News: React.FC = () => {
                     </div>
                     <div className="meta-item">
                       <User size={16} />
-                      <span>{news.author}</span>
+                      <span>Temple Administrator</span>
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="news-content">
                   <p>{news.content}</p>
                 </div>
-                
+
                 <div className="news-category">
-                  <span className={`category-tag ${news.category.toLowerCase()}`}>
+                  <span
+                    className={`category-tag ${news.category.toLowerCase()}`}
+                  >
                     {news.category}
                   </span>
                 </div>
@@ -48,20 +52,21 @@ const News: React.FC = () => {
             <div className="card newsletter-signup">
               <h2>Subscribe to Temple Newsletter</h2>
               <p>
-                Stay informed about upcoming festivals, special events, and temple 
-                announcements by subscribing to our monthly newsletter.
+                Stay informed about upcoming festivals, special events, and
+                temple announcements by subscribing to our monthly newsletter.
               </p>
               <div className="newsletter-form">
                 <div className="form-group">
-                  <input 
-                    type="email" 
-                    placeholder="Enter your email address" 
+                  <input
+                    type="email"
+                    placeholder="Enter your email address"
                     className="form-input"
                   />
                   <button className="btn btn-primary">Subscribe</button>
                 </div>
                 <p className="form-note">
-                  We respect your privacy and will never share your email address.
+                  We respect your privacy and will never share your email
+                  address.
                 </p>
               </div>
             </div>
@@ -77,7 +82,10 @@ const News: React.FC = () => {
                   </div>
                   <div className="update-content">
                     <h4>Extended Darshan Hours</h4>
-                    <p>During festival season, temple will remain open until 9:00 PM</p>
+                    <p>
+                      During festival season, temple will remain open until 9:00
+                      PM
+                    </p>
                     <span className="update-date">Valid from March 1st</span>
                   </div>
                 </div>
@@ -87,7 +95,9 @@ const News: React.FC = () => {
                   </div>
                   <div className="update-content">
                     <h4>Special Abhishek</h4>
-                    <p>Monthly Maha Rudrabhishek on every Amavasya at 6:00 AM</p>
+                    <p>
+                      Monthly Maha Rudrabhishek on every Amavasya at 6:00 AM
+                    </p>
                     <span className="update-date">Ongoing program</span>
                   </div>
                 </div>
@@ -97,7 +107,9 @@ const News: React.FC = () => {
                   </div>
                   <div className="update-content">
                     <h4>Volunteer Program</h4>
-                    <p>Join our seva activities and contribute to temple services</p>
+                    <p>
+                      Join our seva activities and contribute to temple services
+                    </p>
                     <span className="update-date">Applications open</span>
                   </div>
                 </div>
