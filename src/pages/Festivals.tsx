@@ -1,6 +1,6 @@
-import React from 'react';
-import { Calendar, Clock, Users } from 'lucide-react';
-import { festivals } from '../data/templeData';
+import React from "react";
+import { Calendar, Clock, Users } from "lucide-react";
+import { festivals } from "../data/templeData";
 
 const Festivals: React.FC = () => {
   return (
@@ -8,7 +8,10 @@ const Festivals: React.FC = () => {
       <div className="page-header">
         <div className="container">
           <h1>Temple Festivals</h1>
-          <p>Celebrate divine festivals and spiritual gatherings throughout the year</p>
+          <p>
+            Celebrate divine festivals and spiritual gatherings throughout the
+            year
+          </p>
         </div>
       </div>
 
@@ -24,17 +27,21 @@ const Festivals: React.FC = () => {
                     <span>{festival.date}</span>
                   </div>
                 </div>
-                
+
                 <p className="festival-description">{festival.description}</p>
-                
+
                 <div className="festival-details">
                   <div className="detail-item">
                     <Clock size={16} />
-                    <span><strong>Duration:</strong> {festival.duration}</span>
+                    <span>
+                      <strong>Duration:</strong> {festival.duration}
+                    </span>
                   </div>
                   <div className="detail-item">
                     <Users size={16} />
-                    <span><strong>Significance:</strong> {festival.significance}</span>
+                    <span>
+                      <strong>Significance:</strong> {festival.significance}
+                    </span>
                   </div>
                 </div>
 

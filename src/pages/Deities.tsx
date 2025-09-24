@@ -91,8 +91,6 @@ const Deities: React.FC = () => {
           </div>
         </div>
       </section>
-
-
     </div>
   );
 };

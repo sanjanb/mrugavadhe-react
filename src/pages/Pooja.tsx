@@ -1,6 +1,6 @@
-import React from 'react';
-import { Clock, IndianRupee, Heart } from 'lucide-react';
-import { poojas } from '../data/templeData';
+import React from "react";
+import { Clock, IndianRupee, Heart } from "lucide-react";
+import { poojas } from "../data/templeData";
 
 const Pooja: React.FC = () => {
   return (
@@ -24,17 +24,21 @@ const Pooja: React.FC = () => {
                     <span>{pooja.price}</span>
                   </div>
                 </div>
-                
+
                 <p className="pooja-description">{pooja.description}</p>
-                
+
                 <div className="pooja-details">
                   <div className="detail-item">
                     <Clock size={16} />
-                    <span><strong>Duration:</strong> {pooja.duration}</span>
+                    <span>
+                      <strong>Duration:</strong> {pooja.duration}
+                    </span>
                   </div>
                   <div className="detail-item">
                     <Heart size={16} />
-                    <span><strong>Benefits:</strong> {pooja.benefits}</span>
+                    <span>
+                      <strong>Benefits:</strong> {pooja.benefits}
+                    </span>
                   </div>
                 </div>
 
@@ -63,14 +67,18 @@ const Pooja: React.FC = () => {
                     <div className="step-number">1</div>
                     <div className="step-content">
                       <h4>Choose Your Pooja</h4>
-                      <p>Select from our range of sacred rituals and services</p>
+                      <p>
+                        Select from our range of sacred rituals and services
+                      </p>
                     </div>
                   </div>
                   <div className="step">
                     <div className="step-number">2</div>
                     <div className="step-content">
                       <h4>Select Date & Time</h4>
-                      <p>Choose a convenient date and time slot for the ritual</p>
+                      <p>
+                        Choose a convenient date and time slot for the ritual
+                      </p>
                     </div>
                   </div>
                   <div className="step">
@@ -92,10 +100,14 @@ const Pooja: React.FC = () => {
               <div className="card">
                 <h2>Contact for Bookings</h2>
                 <div className="contact-info">
-                  <p><strong>Temple Office:</strong></p>
+                  <p>
+                    <strong>Temple Office:</strong>
+                  </p>
                   <p>📞 +91 8183-234567</p>
                   <p>📧 poojas@mallikarjunatemple.org</p>
-                  <p><strong>Booking Hours:</strong></p>
+                  <p>
+                    <strong>Booking Hours:</strong>
+                  </p>
                   <p>🕘 9:00 AM - 6:00 PM</p>
                   <p>📅 All days except festival days</p>
                 </div>

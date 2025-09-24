@@ -1,6 +1,6 @@
-import React from 'react';
-import { MapPin, Clock, Car, Camera, Utensils, Info } from 'lucide-react';
-import { templeInfo } from '../data/templeData';
+import React from "react";
+import { MapPin, Clock, Car, Camera, Utensils, Info } from "lucide-react";
+import { templeInfo } from "../data/templeData";
 
 const VisitorInfo: React.FC = () => {
   return (
@@ -42,7 +42,9 @@ const VisitorInfo: React.FC = () => {
               </div>
               <h3>Location & Address</h3>
               <div className="location-info">
-                <p><strong>{templeInfo.englishName}</strong></p>
+                <p>
+                  <strong>{templeInfo.englishName}</strong>
+                </p>
                 <p>{templeInfo.location}</p>
                 <p>{templeInfo.district} District</p>
                 <p>{templeInfo.state}, India</p>
@@ -60,7 +62,10 @@ const VisitorInfo: React.FC = () => {
               <div className="transport-info">
                 <div className="transport-mode">
                   <strong>By Road:</strong>
-                  <p>Well-connected by state highways. Buses available from Shimoga and nearby towns.</p>
+                  <p>
+                    Well-connected by state highways. Buses available from
+                    Shimoga and nearby towns.
+                  </p>
                 </div>
                 <div className="transport-mode">
                   <strong>By Train:</strong>
