@@ -7,18 +7,12 @@ const Gallery: React.FC = () => {
   const allImages = [
     ...templeImages.general,
     ...templeImages.festivals,
-  const allImages = [
-    ...templeImages.general,
-    ...templeImages.festivals,
-    ...templeImages.architecture
-  ];
     ...templeImages.architecture,
   ];
 
   const categories = [
     { id: "all", name: "All Images", images: allImages },
     { id: "general", name: "Temple Views", images: templeImages.general },
-    { id: "deities", name: "Deities", images: templeImages.deities },
     { id: "festivals", name: "Festivals", images: templeImages.festivals },
     {
       id: "architecture",

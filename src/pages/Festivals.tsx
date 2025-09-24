@@ -40,7 +40,7 @@ const Festivals: React.FC = () => {
                   <div className="detail-item">
                     <Users size={16} />
                     <span>
-                      <strong>Significance:</strong> {festival.significance}
+                      <strong>Duration:</strong> {festival.duration}
                     </span>
                   </div>
                 </div>

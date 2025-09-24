@@ -550,7 +550,6 @@ const Home: React.FC = () => {
             align-items: center;
           }
         }
-      `}</style>
     </div>
   );
 };
