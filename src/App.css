@@ -1,3 +1,5 @@
+@import './styles/responsive.css';
+
 /* App Global Styles */
 .app {
   min-height: 100vh;
